@@ -1,12 +1,22 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+// app.ts (or app.component.ts)
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';  // Add this import
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [FormsModule, CommonModule],  // Include CommonModule here
+  templateUrl: './app.html',  // Points to your HTML file
+  styleUrls: ['./app.css']    // Points to your CSS file
 })
 export class App {
-  protected readonly title = signal('angular-project');
+  inputValue: string = '';
+  submittedValue: string = '';
+  
+
+  onSubmit() {
+    this.submittedValue = this.inputValue;
+  }
 }

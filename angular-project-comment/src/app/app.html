@@ -1,11 +1,21 @@
-<h1>Physical Therapy sessions.</h1>
-<ul>
-  <li>Leave a comment</li>
-  <li>Recoomment a friend</li>
 
-</ul>
-<!-- <input type="" name="" class="center" placeholder="Enter your comment"> -->
-<div class="container text-center">
-<button class="right">Submit</button>
-<input type="" name="" class="center" placeholder="Enter your comment">
-</div>
+<div>
+  <h1>Physical Therapy Session (Single Visit)</h1>
+  <form (ngSubmit)="onSubmit()">
+    <input 
+      type="text" 
+      id="userInput"
+      [(ngModel)]="inputValue" 
+      name="userInput"
+      
+      placeholder="Type something here..."
+      class="center"
+      
+    >
+    <label class="rightCorner" for="userInput">Limit response to one comment</label>
+    <button type="submit">Submit</button>
+  </form>
+  
+  <h3  class="bottom"    *ngIf="submittedValue">{{ submittedValue }}<li>
+    
+<div>
